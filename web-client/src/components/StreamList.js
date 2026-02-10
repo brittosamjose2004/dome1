@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './StreamList.css';
 
-const API_URL = 'http://192.168.1.36:3000';
+const API_URL = 'http://20.244.29.48:3000';
 
 const StreamList = ({ onSelectStream }) => {
   const [streams, setStreams] = useState([]);
