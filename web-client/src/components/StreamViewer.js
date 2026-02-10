@@ -105,6 +105,9 @@ const StreamViewer = ({ streamId }) => {
 
   const handleOffer = async (offer, senderId) => {
     try {
+      // Parse offer if it's a string (Android sends it as a JSON string inside the message)
+      const offerData = typeof offer === 'string' ? JSON.parse(offer) : offer;
+
       // Create RTCPeerConnection with TURN servers
       pcRef.current = new RTCPeerConnection({
         iceServers: [
@@ -188,7 +191,7 @@ const StreamViewer = ({ streamId }) => {
       };
 
       // Set remote description
-      await pcRef.current.setRemoteDescription(new RTCSessionDescription(offer));
+      await pcRef.current.setRemoteDescription(new RTCSessionDescription(offerData));
 
       // Create answer
       const answer = await pcRef.current.createAnswer();

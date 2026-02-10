@@ -142,7 +142,7 @@ class WebRTCClient(
         ).apply {
             bundlePolicy = PeerConnection.BundlePolicy.MAXBUNDLE
             rtcpMuxPolicy = PeerConnection.RtcpMuxPolicy.REQUIRE
-            tcpCandidatePolicy = PeerConnection.TcpCandidatePolicy.DISABLED
+            tcpCandidatePolicy = PeerConnection.TcpCandidatePolicy.ENABLED
             continualGatheringPolicy = PeerConnection.ContinualGatheringPolicy.GATHER_CONTINUALLY
             keyType = PeerConnection.KeyType.ECDSA
         }
