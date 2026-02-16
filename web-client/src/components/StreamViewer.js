@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './StreamViewer.css';
 
-const SIGNALING_SERVER = 'ws://20.244.29.48:3000';
+const SIGNALING_SERVER = 'ws://13.233.11.137:3000';
 
 const StreamViewer = ({ streamId, isEmbed }) => {
   const videoRef = useRef(null);
@@ -113,7 +113,7 @@ const StreamViewer = ({ streamId, isEmbed }) => {
         iceServers: [
           { urls: 'stun:stun.l.google.com:19302' },
           {
-            urls: 'turn:20.244.29.48:3478',
+            urls: 'turn:13.233.11.137:3478',
             username: 'dome',
             credential: 'domepass123'
           }
